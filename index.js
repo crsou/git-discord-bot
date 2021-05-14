@@ -5,4 +5,4 @@ client.once("ready", () => {
   console.log("Ready!");
 });
 
-client.login("your-token-goes-here");
+client.login(process.env.REACT_APP_BOT_TOKEN);
