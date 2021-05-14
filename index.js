@@ -8,7 +8,12 @@ client.once("ready", () => {
 });
 
 client.on("message", (message) => {
-  console.log(message.content);
+  if (message.embeds.length > 0) {
+    console.log(message);
+    message.channel.send(`New message! ${message.content}`);
+    message.channel.send(`Author! ${message.author}`);
+    message.channel.send(`Embeds! ${message.embeds}`);
+  }
 });
 
 client.login(process.env.TOKEN);
